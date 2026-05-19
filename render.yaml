@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: carteira-b3
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --workers 1 --timeout 120
+    envVars:
+      - key: SHEET_ID
+        value: COLE_SEU_ID_AQUI
+      - key: GOOGLE_CREDS_JSON
+        value: COLE_O_CONTEUDO_DO_CREDENCIAIS_JSON_AQUI
